@@ -1,5 +1,83 @@
-<html>
-    <body>
-        <h1>text</h1>
-    </body>
-</html>
+<!doctype html>
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard</title>
+
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;family=Fraunces:wght@600;700&amp;display=swap" rel="stylesheet">
+  
+  <style>
+        body { font-family: 'DM Sans', sans-serif; }
+        .task-checked { text-decoration: line-through; opacity: 0.5; }
+    </style>
+
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="/_sdk/resizing_sdk.js" type="text/javascript"></script>
+ <script src="/_sdk/telemetry_sdk.js"></script></head>
+ <body data-template-id="__page-root" class="min-h-screen p-6 md:p-10" style="background: rgb(240, 244, 248);">
+  <header class="max-w-6xl mx-auto mb-8">
+   <h1 data-template-id="greeting" class="canva-text font-bold" style="color: rgb(26, 35, 50); font-weight: 700; font-style: normal; font-size: 32px;">Good evening, User 👋</h1>
+   <p data-template-id="subtitle" class="canva-text mt-1" style="color: rgb(90, 107, 125); font-weight: 400; font-style: normal; font-size: 16px;">Here's what's on your plate today.</p>
+  </header>
+  <main class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6"><!-- Tasks -->
+   <section data-template-id="tasks-panel" class="canva-card rounded-2xl p-6" style="background: rgb(255, 255, 255);">
+    <h2 data-template-id="tasks-heading" class="canva-text font-bold mb-4 flex items-center gap-2" style="color: rgb(26, 35, 50); font-weight: 700; font-style: normal; font-size: 24px;">Tasks</h2>
+    <ul class="space-y-3">
+     <li class="flex items-center gap-3 cursor-pointer" onclick="this.querySelector('span').classList.toggle('task-checked')"><input type="checkbox" class="w-4 h-4 accent-emerald-500 rounded"> <span data-template-id="task-1" class="canva-text" style="color: rgb(45, 55, 72); font-weight: 400; font-style: normal; font-size: 16px;">Read Chapter 5 — Biology</span></li>
+     <li class="flex items-center gap-3 cursor-pointer" onclick="this.querySelector('span').classList.toggle('task-checked')"><input type="checkbox" class="w-4 h-4 accent-emerald-500 rounded"> <span data-template-id="task-2" class="canva-text" style="color: rgb(45, 55, 72); font-weight: 400; font-style: normal; font-size: 16px;">Complete math problem set</span></li>
+     <li class="flex items-center gap-3 cursor-pointer" onclick="this.querySelector('span').classList.toggle('task-checked')"><input type="checkbox" class="w-4 h-4 accent-emerald-500 rounded"> <span data-template-id="task-3" class="canva-text" style="color: rgb(45, 55, 72); font-weight: 400; font-style: normal; font-size: 16px;">Review lecture notes for History</span></li>
+     <li class="flex items-center gap-3 cursor-pointer" onclick="this.querySelector('span').classList.toggle('task-checked')"><input type="checkbox" class="w-4 h-4 accent-emerald-500 rounded"> <span data-template-id="task-4" class="canva-text" style="color: rgb(45, 55, 72); font-weight: 400; font-style: normal; font-size: 16px;">Submit lab report draft</span></li>
+    </ul>
+   </section><!-- Assignments -->
+   <section data-template-id="assignments-panel" class="canva-card rounded-2xl p-6" style="background: rgb(255, 255, 255);">
+    <h2 data-template-id="assignments-heading" class="canva-text font-bold mb-4 flex items-center gap-2" style="color: rgb(26, 35, 50); font-weight: 700; font-style: normal; font-size: 24px;">Assignments</h2>
+    <div class="space-y-4">
+     <div data-template-id="assign-1-card" class="canva-card rounded-xl p-4" style="background: rgb(238, 246, 241);">
+      <p data-template-id="assign-1-title" class="canva-text font-medium" style="color: rgb(26, 35, 50); font-weight: 500; font-style: normal; font-size: 16px;">Essay: Climate Change Impact</p>
+      <p data-template-id="assign-1-due" class="canva-text text-sm mt-1" style="color: rgb(107, 127, 142); font-weight: 400; font-style: normal; font-size: 16px;">Due Jun 10 · English</p>
+     </div>
+     <div data-template-id="assign-2-card" class="canva-card rounded-xl p-4" style="background: rgb(238, 241, 249);">
+      <p data-template-id="assign-2-title" class="canva-text font-medium" style="color: rgb(26, 35, 50); font-weight: 500; font-style: normal; font-size: 16px;">Problem Set #7</p>
+      <p data-template-id="assign-2-due" class="canva-text text-sm mt-1" style="color: rgb(107, 127, 142); font-weight: 400; font-style: normal; font-size: 16px;">Due Jun 12 · Calculus</p>
+     </div>
+     <div data-template-id="assign-3-card" class="canva-card rounded-xl p-4" style="background: rgb(253, 245, 238);">
+      <p data-template-id="assign-3-title" class="canva-text font-medium" style="color: rgb(26, 35, 50); font-weight: 500; font-style: normal; font-size: 16px;">Group Presentation Slides</p>
+      <p data-template-id="assign-3-due" class="canva-text text-sm mt-1" style="color: rgb(107, 127, 142); font-weight: 400; font-style: normal; font-size: 16px;">Due Jun 15 · Sociology</p>
+     </div>
+    </div>
+   </section><!-- Events -->
+   <section data-template-id="events-panel" class="canva-card rounded-2xl p-6" style="background: rgb(255, 255, 255);">
+    <h2 data-template-id="events-heading" class="canva-text font-bold mb-4 flex items-center gap-2" style="color: rgb(26, 35, 50); font-weight: 700; font-style: normal; font-size: 24px;">Upcoming Events</h2>
+    <div class="space-y-4">
+     <div class="flex items-start gap-3">
+      <div data-template-id="event-1-date" class="canva-tag text-center rounded-lg px-3 py-2 font-bold text-sm min-w-[48px]" style="background: rgb(224, 231, 255); color: rgb(55, 48, 163); font-weight: 400; font-style: normal; font-size: 16px;">Jun 9</div>
+      <div>
+       <p data-template-id="event-1-title" class="canva-text font-medium" style="color: rgb(26, 35, 50); font-weight: 500; font-style: normal; font-size: 16px;">Study Group — Library</p>
+       <p data-template-id="event-1-time" class="canva-text text-sm" style="color: rgb(107, 127, 142); font-weight: 400; font-style: normal; font-size: 16px;">3:00 PM – 5:00 PM</p>
+      </div>
+     </div>
+     <div class="flex items-start gap-3">
+      <div data-template-id="event-2-date" class="canva-tag text-center rounded-lg px-3 py-2 font-bold text-sm min-w-[48px]" style="background: rgb(252, 231, 243); color: rgb(157, 23, 77); font-weight: 400; font-style: normal; font-size: 16px;">Jun 11</div>
+      <div>
+       <p data-template-id="event-2-title" class="canva-text font-medium" style="color: rgb(26, 35, 50); font-weight: 500; font-style: normal; font-size: 16px;">Career Fair</p>
+       <p data-template-id="event-2-time" class="canva-text text-sm" style="color: rgb(107, 127, 142); font-weight: 400; font-style: normal; font-size: 16px;">10:00 AM – 2:00 PM</p>
+      </div>
+     </div>
+     <div class="flex items-start gap-3">
+      <div data-template-id="event-3-date" class="canva-tag text-center rounded-lg px-3 py-2 font-bold text-sm min-w-[48px]" style="background: rgb(209, 250, 229); color: rgb(6, 95, 70); font-weight: 400; font-style: normal; font-size: 16px;">Jun 14</div>
+      <div>
+       <p data-template-id="event-3-title" class="canva-text font-medium" style="color: rgb(26, 35, 50); font-weight: 500; font-style: normal; font-size: 16px;">Final Exam Review Session</p>
+       <p data-template-id="event-3-time" class="canva-text text-sm" style="color: rgb(107, 127, 142); font-weight: 400; font-style: normal; font-size: 16px;">6:00 PM – 8:00 PM</p>
+      </div>
+     </div>
+    </div>
+   </section>
+  </main>
+  <script src="/_sdk/editing_sdk.js"></script>
+  <script>
+        lucide.createIcons();
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a08215f11db7d8af',t:'MTc4MDg2MDc3Nw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+</body></html>
